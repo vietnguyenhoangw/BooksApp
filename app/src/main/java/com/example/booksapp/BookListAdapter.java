@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,7 +44,7 @@ public class BookListAdapter extends ArrayAdapter<Book> {
         bookTitle = convertView.findViewById(R.id.book_title);
         bookAuthor = convertView.findViewById(R.id.book_author);
 
-        Book book = arrayList.get(position);
+        final Book book = arrayList.get(position);
 
         Picasso.get()
                 .load(book.getBookImage())

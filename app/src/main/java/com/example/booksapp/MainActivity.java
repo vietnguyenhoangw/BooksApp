@@ -2,6 +2,7 @@ package com.example.booksapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -42,11 +43,18 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, "" + i, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, BookDetailActivity.class);
+                intent.putExtra("image",arrayList.get(i).getBookImage());
+                intent.putExtra("title", arrayList.get(i).getBookName());
+                intent.putExtra("author", arrayList.get(i).getBookAuthor());
+                intent.putExtra("descriptions", arrayList.get(i).getBookDescription());
+
+                startActivity(intent);
             }
         });
     }
 
+    // get book from API using volley
     private void getBooks() {
 
         RequestQueue requestQueue = Volley.newRequestQueue(MainActivity.this);
