@@ -23,6 +23,7 @@ public class BookDetailActivity extends AppCompatActivity {
         createWidgets();
         getDataFromMainActivity();
 
+        /* add data from getdata...() below to widgets */
         Picasso.get()
                 .load(image)
                 .into(bookImage);
@@ -32,6 +33,7 @@ public class BookDetailActivity extends AppCompatActivity {
 
     }
 
+    /* get book item data passed from main activity */
     private void getDataFromMainActivity() {
         Bundle bundle = getIntent().getExtras();
 

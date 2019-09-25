@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(bookListAdapter);
         getBooks();
 
+        /* when click on every book item
+        * we will pass this book info data to detailActivity base on position (i)
+        * */
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
